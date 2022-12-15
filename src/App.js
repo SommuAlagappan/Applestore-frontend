@@ -34,12 +34,11 @@ function App() {
   const [data, setData] = useState([]);
   const [count, setCount] = useState(0);
   const [loading, setLoading] = useState(false)
-  useEffect(() => {
-    LoadData();
-  }, []);
+
+
 
   let LoadData = async () => {
-    
+
     setLoading(true)
     let products = await axios.get(`${env.api}/products`,  {
       headers: {
@@ -92,6 +91,7 @@ function App() {
                 cart={cart}
                 addToCart={addToCart}
                 loading={loading}
+                LoadData={LoadData}
               />
             }
           />
@@ -115,7 +115,7 @@ function App() {
           <Route
             path="product/:id"
             element={
-              <ViewProduct count={count} addToCart={addToCart}  />
+              <ViewProduct count={count} addToCart={addToCart} cart={cart}  />
             }
           />
           {/* </Route> */}

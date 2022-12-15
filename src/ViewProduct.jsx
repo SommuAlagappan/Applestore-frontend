@@ -5,7 +5,7 @@ import { env } from "./Config";
 import Navbar from './Components/Navbar';
 
 
-function ViewProduct ({count}) {
+function ViewProduct ({count , addToCart, cart}) {
 
 
   const params = useParams();
@@ -64,13 +64,13 @@ function ViewProduct ({count}) {
         <p><span className="card-text lead text-white">Battery : </span ><span className=" fst-italic text-white">{productData.Battery}</span></p>
         <p><span className="card-text lead text-white">Security(Lock) : </span> <span className=" fst-italic text-white">{productData.Security}</span></p>
       </div>
-      {/* <button
-            // disabled={cart.some((obj) => obj._id === res._id)}
-            // onClick={() => addToCart(res)}
+      <button
+            disabled={cart.some((obj) => obj._id === productData._id)}
+            onClick={() => addToCart(productData)}
             className="btn btn-outline-light btn-sm ms-3"
           >
             <i className="fa-solid fa-cart-shopping me-1"></i>Add to Cart
-          </button> */}
+          </button>
     </div>
   </div>
 </div>

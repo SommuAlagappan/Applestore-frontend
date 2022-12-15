@@ -6,9 +6,16 @@ import Productstitle from "./Components/Productstitle";
 import Testimonials from "./Testimonials";
 import Footer from "./Components/Footer";
 import Services from "./Services";
+import { useEffect } from "react";
 
 
-function Dashboard({cart, data, addToCart, count, loading }) {
+
+function Dashboard({cart, data, addToCart, count, loading, LoadData }) {
+
+  useEffect(() => {
+    LoadData();
+  }, []);
+
 
   return (<>
     
