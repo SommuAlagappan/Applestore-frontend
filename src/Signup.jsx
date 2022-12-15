@@ -3,6 +3,8 @@ import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { env } from "./Config";
 
 function Signup() {
@@ -15,44 +17,44 @@ let navigate = useNavigate()
       emailAddress: "",
       password: "",
     },
-    validate: (values) => {
-      let errors = {}
+    // validate: (values) => {
+    //   let errors = {}
 
       
-      if(values.fullName.length < 3){
-          errors.fullName = "Please enter the fullname"
-      }
+    //   if(values.fullName.length < 3){
+    //       errors.fullName = "Please enter the fullname"
+    //   }
     
-      if(values.emailAddress.length <5 ){
-        errors.emailAddress = "Please provide a valid email address"
-      }
+    //   if(values.emailAddress.length <5 ){
+    //     errors.emailAddress = "Please provide a valid email address"
+    //   }
 
-      if(values.mobileNumber.length <= 9){
-        errors.mobileNumber = "Please provide a valid mobile number"
-      }
+    //   if(values.mobileNumber.length <= 9){
+    //     errors.mobileNumber = "Please provide a valid mobile number"
+    //   }
 
-      if(values.password.length < 8){
-        errors.password = "Password must contain atleast 8 characters"
-      }
+    //   if(values.password.length < 8){
+    //     errors.password = "Password must contain atleast 8 characters"
+    //   }
 
-      return errors
-    },
+    //   return errors
+    // },
 
     onSubmit: async (values) => {
-      console.log(values);
+      // console.log(values);
 
       try {
         let registerData = await axios.post(`${env.api}/register`, values)
         // console.log(registerData)
 
         if(registerData.status === 200) {
-          alert("User registered successfully")
+          toast.success("User registered successfully")
           navigate("/login");
         }
          
       } catch (error) {
         console.log(error);
-        alert(error.response.data.message);
+        toast.error(error.response.data.message);
         
       }
     },
@@ -80,9 +82,15 @@ let navigate = useNavigate()
        <div className="row ">
 
 <div className="col-md-6 ">
-  <img src="assets/Applesignup1.png" className="mt-md-5 img-fluid ms-md-5" alt="applesignuplogo" style={{height:"520px", width:"370px"}}  />
+  <img src="assets/Applesignup1.png" className="mt-md-4 img-fluid ms-md-5" alt="applesignuplogo" style={{height:"520px", width:"370px"}}  />
+  
+  <div className="design text-white">
+    <h4>Login Credentials:</h4>
+    <span className="lead fw-normal">Username : <span className="lead fst-italic">user@gmail.com</span> </span><br/>
+    <span className="lead fw-normal">Password : <span className="lead fst-italic">Welcome@123</span></span><br/>
+    <span className="lead fst-italic">New users can also register and log in </span>
   </div>
-
+  </div>
 
           <div className="col-md-6">
             <div className="col-md-8 mx-auto">
@@ -106,7 +114,6 @@ let navigate = useNavigate()
                       className="form-control formtrans"
                       id="name"
                       aria-describedby="emailHelp"
-
                       placeholder="Enter your full name"
                       required
                     />
@@ -123,8 +130,6 @@ let navigate = useNavigate()
                       type="number"
                       className="form-control formtrans"
                       id="number"
-                      pattern="[789][0-9]{9}"
-
                       value={formik.values.mobileNumber}
                                   onChange={formik.handleChange}
                                   name="mobileNumber"
@@ -170,7 +175,6 @@ let navigate = useNavigate()
                       className="form-control formtrans"
                       id="exampleInputPassword1"
                       placeholder="Enter your password"
-                      pattern=".{8,}"
                       required
                     />
            

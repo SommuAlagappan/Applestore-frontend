@@ -5,6 +5,8 @@ function CartLoop({
   res1,
   index,
   handleRemoveCart,
+  handleAddToCart,
+
   total,
   // count,
   // handleIncrement,
@@ -57,18 +59,17 @@ function CartLoop({
               </p>
              
               <button className="btn btn-light btn-sm mb-1"
-                  onClick={() => increment(res1)}>
+                  onClick={() => handleAddToCart(res1)}>
                   <i className="fas fa-plus"></i>
                 </button>
 
-              <span className="mx-4 h5 text-white">{count}</span>
+              {/* <span className="mx-4 h5 text-white">{count}</span> */}
 
-              <button disabled={count === 1 ? true : false} className="btn btn-light btn-sm mb-1"
+              {/* <button disabled={count === 1 ? true : false} className="btn btn-light btn-sm mb-1"
                   onClick={() => decrement(res1)}>
                   <i className="fas fa-minus"></i>
-                </button>
-                <button type="button" onClick={() => handleRemoveCart(res1)} className="btn btn-danger btn-sm ms-4 ms-md-5 mb-1" data-mdb-toggle="tooltip"
-                title="Remove item">
+                </button> */}
+                <button type="button" onClick={() => handleRemoveCart(res1)} className="btn btn-danger btn-sm ms-4 ms-md-5 mb-1">
                 <i className="fas fa-trash"></i>
               </button>
             </div>

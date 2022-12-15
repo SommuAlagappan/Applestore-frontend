@@ -22,11 +22,10 @@ function Cart({
       <Navbar count={count} />
         <div className="row g-5 mt-md-3 d-flex justify-content-center ">
           <div className="col-md-7">
-            {cart.map((item, index) => {
+            {cart.map((item) => {
               return (
                 <CartLoop
                   res1={item}
-                  index={index}
                   handleRemoveCart={removeCart}
                   handleAddToCart={addToCart}
                   handleIncrement={increment}

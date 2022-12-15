@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link,  useNavigate } from 'react-router-dom'
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 function Navbar({count}) {
 
   let navigate= useNavigate()
   let logout = () => {
     window.localStorage.clear()
+    toast.info("Logged out successfully")
     navigate("/")
 }
 

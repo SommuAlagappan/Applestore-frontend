@@ -3,6 +3,8 @@ import {  useFormik } from "formik";
 import {  Link, useNavigate } from "react-router-dom";
 import './App.css';
 import { env } from "./Config";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 
 
@@ -17,7 +19,7 @@ function Login() {
     },
 
     onSubmit: async (values) => {
-      console.log(values);
+      // console.log(values);
 
       try {
         let loginData = await axios.post(`${env.api}/login`, values)
@@ -26,13 +28,14 @@ function Login() {
         if(loginData.status === 200) {
 
             window.localStorage.setItem("app-token", loginData.data.token)
+            toast.success("Logged in successfully")
             navigate("/dashboard")
-            alert("Logged in successfully")
+            
           }
           
         }
        catch (error) {
-        alert(error.response.data.message);
+        toast.error(error.response.data.message);
         console.log(error);
         
       }

@@ -6,12 +6,9 @@ import Productstitle from "./Components/Productstitle";
 import Testimonials from "./Testimonials";
 import Footer from "./Components/Footer";
 import Services from "./Services";
-import { useLocation } from "react-router-dom";
 
-function Dashboard({cart, data, addToCart, count }) {
 
-  // const location=useLocation();
-  // let username=location.state
+function Dashboard({cart, data, addToCart, count, loading }) {
 
   return (<>
     
@@ -22,21 +19,29 @@ function Dashboard({cart, data, addToCart, count }) {
       <Carousel/>
 
       <Productstitle/>
-
       {/* Cards */}
+{
+  
+  loading ?  
+  <div className="text-center mt-5" style={{ height:"18rem" }}>
+      <div className="spinner-grow text-light " role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  : 
+<div>
       <div className="container">
         <div className="row">
           <div className="col-md-12 mt-5">
             <div className="row g-5">
               {
                 //etha loop pannanum products ah so products.map
-                data.map((item, index) => {
+                data.map((item) => {
                   return (
                     <Card
                       res={item}
                       handleAddToCart={addToCart}
                       cart={cart}
-                      index={index}
                     ></Card>
                   );
                 })
@@ -51,7 +56,8 @@ function Dashboard({cart, data, addToCart, count }) {
       <Testimonials/>
     
       <Footer/>
- 
+      </div>
+    }
   
 </>)
 }
