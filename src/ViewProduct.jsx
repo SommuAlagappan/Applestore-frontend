@@ -55,12 +55,12 @@ function ViewProduct ({count}) {
       <div className="card-body ">
         <p className="card-title display-4 fw-normal text-white">{productData.title}</p>
         <p className="card-title lead fw-normal fs-2 text-white">Price : ₹ {productData.price}</p>
-        <p className="card-text lead fw-normal text-white">Capacity : <span className="lead fst-italic text-white">{productData.Memory}</span></p>
-        <p className="card-text lead fw-normal text-white ">Display : <span className="lead fst-italic text-white">{productData.Display}</span></p>
-        <p className="card-text lead fw-normal text-white">Camera : <span className="lead fst-italic text-white">{productData.Camera}</span></p>
-        <p className="card-text lead fw-normal text-white">Processor : <span className="lead fst-italic text-white">{productData.Processor}</span></p>
-        <p className="card-text lead fw-normal text-white">Battery : <span className="lead fst-italic text-white">{productData.Battery}</span></p>
-        <p className="card-text lead fw-normal text-white">Security(Lock) : <span className="lead fst-italic text-white">{productData.Security}</span></p>
+        <p className="card-text lead fw-normal text-white">Capacity : <span className=" fst-italic text-white">{productData.Memory}</span></p>
+        <p className="card-text lead fw-normal text-white ">Display : <span className=" fst-italic text-white">{productData.Display}</span></p>
+        <p className="card-text lead fw-normal text-white">Camera : <span className=" fst-italic text-white">{productData.Camera}</span></p>
+        <p className="card-text lead fw-normal text-white">Processor : <span className=" fst-italic text-white">{productData.Processor}</span></p>
+        <p className="card-text lead fw-normal text-white">Battery : <span className=" fst-italic text-white">{productData.Battery}</span></p>
+        <p className="card-text lead fw-normal text-white">Security(Lock) : <span className=" fst-italic text-white">{productData.Security}</span></p>
       </div>
       {/* <button
             // disabled={cart.some((obj) => obj._id === res._id)}
