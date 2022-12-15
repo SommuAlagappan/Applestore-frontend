@@ -82,14 +82,7 @@ let navigate = useNavigate()
        <div className="row ">
 
 <div className="col-md-6 ">
-  <img src="assets/Applesignup1.png" className="mt-md-4 img-fluid ms-md-5" alt="applesignuplogo" style={{height:"520px", width:"370px"}}  />
-  
-  <div className="design text-white">
-    <h4>Login Credentials:</h4>
-    <span className="lead fw-normal">Username : <span className="lead fst-italic">user@gmail.com</span> </span><br/>
-    <span className="lead fw-normal">Password : <span className="lead fst-italic">Welcome@123</span></span><br/>
-    <span className="lead fst-italic">New users can also register and log in </span>
-  </div>
+  <img src="assets/Applesignup1.png" className="mt-md-5 img-fluid ms-md-5" alt="applesignuplogo" style={{height:"520px", width:"370px"}}  />
   </div>
 
           <div className="col-md-6">

@@ -142,6 +142,17 @@ function Login() {
             
           </div>
         </div>
+
+        <div className="row">
+          <div className="col-md-4 mt-5 pt-5">
+          <div className="design text-white">
+    <h4>Login Credentials:</h4>
+    <span className="lead fw-normal">Username : <span className="lead fst-italic">user@gmail.com</span> </span><br/>
+    <span className="lead fw-normal">Password : <span className="lead fst-italic">Welcome@123</span></span><br/>
+    <span className="lead fst-italic">New users can also register and log in </span>
+  </div>
+          </div>
+        </div>
       </div>
  
     </>
