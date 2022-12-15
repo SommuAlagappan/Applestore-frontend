@@ -25,7 +25,7 @@ function ViewProduct ({count}) {
           Authorization: window.localStorage.getItem("app-token"),
         },
       });
-      console.log(product.data)
+      // console.log(product.data)
       setProductData(product.data);
       setLoading(false)
     } catch (error) {
