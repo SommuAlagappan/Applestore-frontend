@@ -39,7 +39,7 @@ function App() {
   }, []);
 
   let LoadData = async () => {
-  try {
+    
     setLoading(true)
     let products = await axios.get(`${env.api}/products`,  {
       headers: {
@@ -48,9 +48,7 @@ function App() {
     });
     setData(products.data);
     setLoading(false)
-  } catch (error) {
-    console.log(error)
-  }
+  
   };
   // console.log(data);
 
